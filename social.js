@@ -19,11 +19,18 @@ class SocialNetwork {
 
   getUser(userID) {
     // Your code here
+    if (!this.users[userID]) return null;
     return this.users[userID]
   }
 
   follow(userID1, userID2) {
     // Your code here
+    if (!this.users[userID1] || !this.users[userID2]) return false;
+    else {
+      this.follows[userID1].add(userID2)
+      return true;
+    }
+
   }
 
   getFollows(userID) {

@@ -35,14 +35,26 @@ class SocialNetwork {
 
   getFollows(userID) {
     // Your code here
+    return this.follows[userID]
   }
 
   getFollowers(userID) {
     // Your code here
+    let followers = new Set()
+
+    for (let users in this.follows) {
+      if (this.follows[users].has(userID)) {
+        followers.add(parseInt(users))
+      }
+    }
+    return followers;
   }
 
-  getRecommendedFollows(userID, degrees) {
+  getRecommendedFollows(userID, degrees, recommended = []) {
     // Your code here
+    while (degrees) {
+    if ()
+    }
   }
 }
 
